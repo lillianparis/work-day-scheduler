@@ -12,7 +12,8 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
-let workSchedule = {
+// an array of times
+let workSchedule = [{
     "8 AM": "",
     "9 AM": "",
     "10 AM": "",
@@ -23,5 +24,41 @@ let workSchedule = {
     "3 PM": "",
     "4 PM": "",
     "5 PM": "",
-};
+}];
+// Create current date and time to be displayed on top of the page
+const today = new Date();
+const day = today.getDay();
+const daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+// displays in the console
+console.log(`Today is : ${daylist[day]}.`);
+let hour = today.getHours();
+const minute = today.getMinutes();
+const second = today.getSeconds();
+// prepand inserts specified content at the begining of the selected elements
+let prepand = (hour >= 12) ? " PM " : " AM ";
+hour = (hour >= 12) ? hour - 12 : hour;
+// the === returns true if both operands are the same type and contain the same value
+if (hour === 0 && prepand === ' PM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Noon';
+    }
+    else {
+        hour = 12;
+        prepand = ' PM';
+    }
+}
+if (hour === 0 && prepand === ' AM ') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepand = ' Midnight';
+    }
+    else {
+        hour = 12;
+        prepand = ' AM';
+    }
+}
+// displays time in the console
+console.log(`Current Time : ${hour}${prepand} : ${minute} : ${second}`);
+
 
