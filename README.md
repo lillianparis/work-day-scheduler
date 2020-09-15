@@ -1,5 +1,7 @@
 # work-day-scheduler
 This Party APIs
+<img width="1261" alt="Screen Shot 2020-09-14 at 10 14 44 PM" src="https://user-images.githubusercontent.com/62733242/93168471-c7e07900-f6d7-11ea-9c7d-2deabc69df2b.png">
+
 This calender application will feature HTML and Css powered by jQuery. When 
 you open the planner, the current workday should be displayed at the top
 of the calender. As you scroll down you will be presented with timeblocks
