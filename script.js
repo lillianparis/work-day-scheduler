@@ -87,3 +87,4 @@ $("#time10").val(localStorage.getItem("hour5"));
 
 
 
+// Change colors of timeblock for past, present and future
