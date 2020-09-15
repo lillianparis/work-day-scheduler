@@ -30,6 +30,7 @@ const today = new Date();
 const day = today.getDay();
 const daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
 // displays in the console
+// $ indicates storing and retriving data related to an element
 console.log(`Today is : ${daylist[day]}.`);
 let hour = today.getHours();
 const minute = today.getMinutes();
