@@ -73,8 +73,8 @@ $("#save").on("click", function () {
 
     localStorage.setItem(time, text);
 })
-
-$("time1 #text-entry1").val(localStorage.getItem("hour8"));
+// Saving to local storage
+$("time1").val(localStorage.getItem("hour8"));
 $("#time2").val(localStorage.getItem("hour9"));
 $("#time3").val(localStorage.getItem("hour10"));
 $("#time4").val(localStorage.getItem("hour11"));
