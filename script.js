@@ -61,5 +61,27 @@ if (hour === 0 && prepand === ' AM ') {
 }
 // displays time in the console
 console.log(`Current Time : ${hour}${prepand} : ${minute} : ${second}`);
+// lets the current date and time to appear on the page under the title and desription.
+// the month date and year is displayed and then the time is displayed last.
+$("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
 
+// Assign the save button to a click listener, so text inputed into each hour is saved
+$("#save").on("click", function () {
+    console.log(this);
+    let text = $(this).siblings("#text-entry1").val();
+    let time = $(this).parent().attr("id");
+
+    localStorage.setItem(time, text);
+})
+
+$("time1 #text-entry1").val(localStorage.getItem("hour8"));
+$("#time2").val(localStorage.getItem("hour9"));
+$("#time3").val(localStorage.getItem("hour10"));
+$("#time4").val(localStorage.getItem("hour11"));
+$("#time5").val(localStorage.getItem("hour12"));
+$("#time6").val(localStorage.getItem("hour1"));
+$("#time7").val(localStorage.getItem("hour2"));
+$("#time8").val(localStorage.getItem("hour3"));
+$("#time9").val(localStorage.getItem("hour4"));
+$("#time10").val(localStorage.getItem("hour5"));
 
