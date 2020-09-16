@@ -69,21 +69,24 @@ $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
 $("#save").on("click", function () {
     console.log(this);
     let text = $(this).siblings("#text-entry1").val();
-    let time = $(this).parent().attr("id");
+    let time = $(this).parent().attr("calender-row1");
 
     localStorage.setItem(time, text);
 })
 // Saving to local storage
-$("time1").val(localStorage.getItem("hour8"));
-$("#time2").val(localStorage.getItem("hour9"));
-$("#time3").val(localStorage.getItem("hour10"));
-$("#time4").val(localStorage.getItem("hour11"));
-$("#time5").val(localStorage.getItem("hour12"));
-$("#time6").val(localStorage.getItem("hour1"));
-$("#time7").val(localStorage.getItem("hour2"));
-$("#time8").val(localStorage.getItem("hour3"));
-$("#time9").val(localStorage.getItem("hour4"));
-$("#time10").val(localStorage.getItem("hour5"));
+// We access the value with getItem
+// We put the text on the page with .text
+// The selector I use is text-entry1
+$("#text-entry1").text(localStorage.getItem("text-entry1"));
+$("#text-entry2").text(localStorage.getItem("hour9"));
+$("#text-entry3").text(localStorage.getItem("hour10"));
+$("#text-entry4").text(localStorage.getItem("hour11"));
+$("#text-entry5").text(localStorage.getItem("hour12"));
+$("#text-entry6").text(localStorage.getItem("hour1"));
+$("#text-entry7").text(localStorage.getItem("hour2"));
+$("#text-entry8").text(localStorage.getItem("hour3"));
+$("#text-entry9").text(localStorage.getItem("hour4"));
+$("#text-entry10").text(localStorage.getItem("hour5"));
 
 
 
