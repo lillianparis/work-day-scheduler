@@ -75,42 +75,23 @@ $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 //     console.log(time, text);
 // })
 
-// // Saving to local storage
-// // I access the value with getItem
-// // I put the text on the page with .text
-// // The selector I use is text-entry1
-// // $JQuery
-
-// $("#text-entry1").text(localStorage.getItem("#calender-row1"));
-// $("#text-entry2").text(localStorage.getItem("#calender-row2"));
-// $("#text-entry3").text(localStorage.getItem("#calender-row3"));
-// $("#text-entry4").text(localStorage.getItem("#calender-row4"));
-// $("#text-entry5").text(localStorage.getItem("#calender-row5"));
-// $("#text-entry6").text(localStorage.getItem("#calender-row6"));
-// $("#text-entry7").text(localStorage.getItem("#calender-row7"));
-// $("#text-entry8").text(localStorage.getItem("#calender-row8"));
-// $("#text-entry9").text(localStorage.getItem("#calender-row9"));
-// $("#text-entry10").text(localStorage.getItem("#calender-row10"));
+// Saving to local storage
 
 
-// // Change colors of timeblock for past, present and future
-
-// // function timeTracker() {
-// //     let currentHour = moment().hour();
-// // }
-
-$("#save").on("click", function (){
-    saveEvent = $(this.parent().siblings("#text-entry").children("#calender-row"));
-    let elementId = $(this).parent().siblings("#text-entry").children("#calender-row").attr("id");
-    localStorage.setItem(saveEvent, elementId)
-})
-$("#save").on("click", function(){
-    location.reload();
-    console.log(this)
-})
-
-
-// Setting up past, present and future...
+    
+    $("#save").on("click", function (){
+        console.log(this)
+        saveEvent = $(this).parent().siblings("#text-entry").children("#calender-row");
+        let elementId = $(this).parent().siblings("#text-entry").children("#calender-row").attr("id");
+        localStorage.setItem(saveEvent, elementId)
+    })
+    $("#save").on("click", function(){
+        location.reload();
+    })
+    
+    
+    // // Change colors of timeblock for past, present and future
+    // Setting up past, present and future...
 $("#text-entry").each(function (){
     let elementId = $(this).attr("id");
 
