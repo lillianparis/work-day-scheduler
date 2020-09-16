@@ -25,6 +25,9 @@ let workSchedule = [{
     "4 PM": "",
     "5 PM": "",
 }];
+let saveEvent = "";
+let currentTime = moment().hour();
+
 // Create current date and time to be displayed on top of the page
 const today = new Date();
 const day = today.getDay();
@@ -80,9 +83,9 @@ $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 
     
     $("#save").on("click", function (){
-        console.log(this)
         saveEvent = $(this).parent().siblings("#text-entry").children("#calender-row");
         let elementId = $(this).parent().siblings("#text-entry").children("#calender-row").attr("id");
+        console.log(this)
         localStorage.setItem(saveEvent, elementId)
     })
     $("#save").on("click", function(){
