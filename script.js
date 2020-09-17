@@ -83,10 +83,11 @@ $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 
     
     $("#save").on("click", function (){
-        saveEvent = $(this).parent().siblings("#text-entry").children("#calender-row");
-        let elementId = $(this).parent().siblings("#text-entry").children("#calender-row").attr("id");
+        saveEvent = $(this).siblings("#text-entry").val();
+        let elementId = $(this).siblings("#text-entry").attr("data-hour");
         console.log(this)
-        localStorage.setItem(saveEvent, elementId)
+        // (key first, then value)
+        localStorage.setItem(elementId, saveEvent)
     })
     $("#save").on("click", function(){
         location.reload();
@@ -105,7 +106,8 @@ $("#text-entry").each(function (){
     }
     
     currentTime= moment().hour();
-    let timeBlock = $(this).attr("id")
+    let timeBlock = $(this).attr("data-hour")
+    parseInt("data-hour");
     if (timeBlock > currentTime){
         $(this).addClass("future")
     } else if (timeBlock < currentTime){
