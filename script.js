@@ -81,38 +81,38 @@ $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 // Saving to local storage
 
 
-    
-    $("#save").on("click", function (){
-        saveEvent = $(this).siblings("#text-entry").val();
-        let elementId = $(this).siblings("#text-entry").attr("data-hour");
-        console.log(this)
-        // (key first, then value)
-        localStorage.setItem(elementId, saveEvent)
-    })
-    $("#save").on("click", function(){
-        location.reload();
-    })
-    
-    
-    // // Change colors of timeblock for past, present and future
-    // Setting up past, present and future...
-$("#text-entry").each(function (){
+
+$(".save").on("click", function () {
+    saveEvent = $(this).siblings("#text-entry").val();
+    let elementId = $(this).siblings("#text-entry").attr("data-hour");
+    console.log(this)
+    // (key first, then value)
+    localStorage.setItem(elementId, saveEvent)
+})
+$(".save").on("click", function () {
+    location.reload();
+})
+
+
+$("#text-entry").each(function () {
     let elementId = $(this).attr("data-hour");
 
     let localValue = localStorage.getItem(elementId);
-    if (localValue != null){
+    if (localValue != null) {
         $(this).val(localValue)
         console.log(this)
     }
-    
-    currentTime= moment().hour();
+
+    // Change colors of timeblock for past, present and future
+    // Setting up past, present and future...
+    currentTime = moment().hour();
     let timeBlock = $(this).attr("data-hour")
     parseInt("data-hour");
-    if (timeBlock > currentTime){
+    if (timeBlock > currentTime) {
         $(this).addClass("future")
-    } else if (timeBlock < currentTime){
+    } else if (timeBlock < currentTime) {
         $(this).addClass("past")
-    }else if (timeBlock == currentTime){
+    } else if (timeBlock == currentTime) {
         $(this).addClass("present")
     }
 
