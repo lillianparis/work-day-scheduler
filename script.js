@@ -72,19 +72,7 @@ console.log(`Current Time : ${hour}${prepand} : ${minute}`);
 // the month date and year is displayed and then the time is displayed last.
 $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 
-// Assign the save button to a click listener, so text inputed into each hour is saved
-// $("#save").on("click", function () {
-//     console.log(this);
-//     let text = $(this).siblings("#text-entry").val();
-//     let time = $(this).parent().attr("calender-row1");
-
-//     localStorage.setItem(time, text);
-//     console.log(time, text);
-// })
-
 // Saving to local storage
-
-
 
 $(".save").on("click", function () {
     saveEvent = $(this).siblings("#text-entry").val();
@@ -97,8 +85,8 @@ $(".save").on("click", function () {
     location.reload();
 })
 
-
-$("#text-entry").each(function () {
+$("textarea").each(function () {
+    
     let elementId = $(this).attr("data-hour");
 
     let localValue = localStorage.getItem(elementId);
@@ -109,9 +97,10 @@ $("#text-entry").each(function () {
 
     // Change colors of timeblock for past, present and future
     // Setting up past, present and future...
-    currentTime = moment().hour();
+    currentTime = moment().hours();
+    console.log(currentTime)
     let timeBlock = $(this).attr("data-hour")
-    parseInt("data-hour");
+    
     if (timeBlock > currentTime) {
         $(this).addClass("future")
     } else if (timeBlock < currentTime) {
