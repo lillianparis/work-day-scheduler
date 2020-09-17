@@ -97,7 +97,7 @@ $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
     // // Change colors of timeblock for past, present and future
     // Setting up past, present and future...
 $("#text-entry").each(function (){
-    let elementId = $(this).attr("id");
+    let elementId = $(this).attr("data-hour");
 
     let localValue = localStorage.getItem(elementId);
     if (localValue != null){
