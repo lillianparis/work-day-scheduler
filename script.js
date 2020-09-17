@@ -14,17 +14,21 @@
 
 // an array of times
 let workSchedule = [{
-    "8 AM": "",
-    "9 AM": "",
-    "10 AM": "",
-    "11 AM": "",
-    "12 PM": "",
-    "1 PM": "",
-    "2 PM": "",
-    "3 PM": "",
-    "4 PM": "",
-    "5 PM": "",
+    "8 AM": localStorage.getItem("8"),
+    "9 AM": localStorage.getItem("9"),
+    "10 AM": localStorage.getItem("10"),
+    "11 AM": localStorage.getItem("11"),
+    "12 PM": localStorage.getItem("12"),
+    "1 PM": localStorage.getItem("1"),
+    "2 PM": localStorage.getItem("2"),
+    "3 PM": localStorage.getItem("3"),
+    "4 PM": localStorage.getItem("4"),
+    "5 PM": localStorage.getItem("5"),
 }];
+
+console.log(workSchedule)
+
+
 let saveEvent = "";
 let currentTime = moment().hour();
 
@@ -85,7 +89,7 @@ $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 $(".save").on("click", function () {
     saveEvent = $(this).siblings("#text-entry").val();
     let elementId = $(this).siblings("#text-entry").attr("data-hour");
-    console.log(this)
+    // console.log(this)
     // (key first, then value)
     localStorage.setItem(elementId, saveEvent)
 })
@@ -100,7 +104,7 @@ $("#text-entry").each(function () {
     let localValue = localStorage.getItem(elementId);
     if (localValue != null) {
         $(this).val(localValue)
-        console.log(this)
+        // console.log(this)
     }
 
     // Change colors of timeblock for past, present and future
