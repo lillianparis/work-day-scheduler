@@ -66,6 +66,8 @@ if (hour === 0 && prepand === ' AM ') {
         prepand = ' AM';
     }
 }
+// source https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-1.php
+// noy using seconds anymore
 // displays time in the console
 console.log(`Current Time : ${hour}${prepand} : ${minute}`);
 // lets the current date and time to appear on the page under the title and desription.
