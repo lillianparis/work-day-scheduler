@@ -13,4 +13,6 @@ saved in local storage and if you refreash the page, the saved events will
 still exist. This application will help its users manage their time more effectively,
 alongside the demands of a busy life.
 
+Deployed: https://lillianparis.github.io/work-day-scheduler/ 
+
 Source = https://momentjs.com/
